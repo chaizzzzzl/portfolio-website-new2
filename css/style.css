@@ -1314,12 +1314,7 @@ h3.section-subtitle {
 }
 
 .works-grid.calligraphy-grid .work-image {
-    height: auto;
-    min-height: 250px;
-}
-
-.works-grid.calligraphy-grid .work-image img {
-    object-fit: contain;
+    height: 250px;
 }
 
 /* 宽幅作品单独一排布局 */
@@ -1330,12 +1325,7 @@ h3.section-subtitle {
 }
 
 .works-grid.single-row-grid .work-image {
-    height: auto;
-    min-height: 300px;
-}
-
-.works-grid.single-row-grid .work-image img {
-    object-fit: contain;
+    height: 300px;
 }
 
 @media (max-width: 768px) {
@@ -1377,30 +1367,16 @@ h3.section-subtitle {
 
 .work-image {
     width: 100%;
-    height: auto;
-    min-height: 450px;
+    height: 450px;
     overflow: hidden;
     position: relative;
     border-radius: 16px 16px 0 0;
     flex: 1;
 }
 
-.work-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
 @media (max-width: 768px) {
     .work-image {
-        height: auto;
-        min-height: 350px;
-    }
-    
-    .work-image img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
+        height: 350px;
     }
 }
 
@@ -1838,55 +1814,13 @@ html {
     }
 
     .works-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
         padding: 0 0.5rem;
     }
 
     .work-image {
-        height: auto !important;
-        min-height: 200px;
-    }
-    
-    .work-image img {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-        max-width: 100% !important;
-        max-height: none !important;
-    }
-
-    /* 书法作品特殊布局 */
-    .works-grid.calligraphy-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 0 0.5rem;
-    }
-
-    .works-grid.calligraphy-grid .work-image {
-        height: auto;
-        min-height: 150px;
-    }
-
-    .works-grid.calligraphy-grid .work-image img {
-        object-fit: contain;
-    }
-
-    .works-grid.single-row-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 0 0.5rem;
-    }
-
-    .works-grid.single-row-grid .work-image {
-        height: auto !important;
-        min-height: 200px;
-    }
-    
-    .works-grid.single-row-grid .work-image img {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
+        height: 250px;
     }
 
     .about,
@@ -1992,61 +1926,4 @@ html {
 .navbar.scrolled {
     padding: 0.5rem 0;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* 苹果手机Safari浏览器特定样式 */
-@media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
-    /* 针对苹果高DPI屏幕的优化 */
-    .work-image {
-        height: 250px !important;
-        min-height: 250px !important;
-        aspect-ratio: unset !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .work-image img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        -webkit-object-fit: cover !important;
-        max-width: 100% !important;
-        max-height: 100% !important;
-    }
-    
-    /* 确保图片容器不会限制图片比例 */
-    .works-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-    }
-    
-    /* 调整书法作品布局 */
-    .works-grid.calligraphy-grid .work-image {
-        height: 180px !important;
-        min-height: 180px !important;
-    }
-    
-    .works-grid.single-row-grid .work-image {
-        height: 200px !important;
-        min-height: 200px !important;
-    }
-    
-    .works-grid.single-row-grid .work-image img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        -webkit-object-fit: cover !important;
-    }
-    
-    /* 修复Safari中的backdrop-filter问题 */
-    .glass-overlay {
-        background: rgba(255, 255, 255, 0.3);
-        -webkit-backdrop-filter: blur(20px);
-    }
-    
-    .navbar {
-        background: rgba(255, 255, 255, 0.9);
-        -webkit-backdrop-filter: blur(25px);
-    }
 }
